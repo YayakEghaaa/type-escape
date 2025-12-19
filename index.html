@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Type Escape | Tactical Hybrid Shooter</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
+  </head>
+  <body class="bg-gray-950">
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="container mx-auto px-4 py-4">
+        <div class="flex justify-between items-center">
+          <div class="flex items-center space-x-2">
+            <div class="logo-icon"></div>
+            <span class="logo-text">
+              <span class="text-cyan-400">TYPE</span
+              ><span class="text-white">ESCAPE</span>
+            </span>
+          </div>
+
+          <div class="desktop-nav">
+            <a href="#gameplay" class="nav-link">Gameplay</a>
+            <a href="#phases" class="nav-link">Phases</a>
+            <a href="#trailer" class="nav-link">Trailer</a>
+            <a href="#screenshots" class="nav-link">Screenshots</a>
+            <a href="#download" class="nav-link">Download</a>
+          </div>
+
+          <button id="mobile-menu-btn" class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="container mx-auto">
+        <div class="flex flex-col lg:flex-row items-center">
+          <div class="hero-content">
+            <h1 class="game-title">
+              <span class="text-cyan-400">TYPE</span><br />
+              <span class="text-white">ESCAPE</span>
+            </h1>
+
+            <p class="tagline">
+              YOUR KEYBOARD <span class="text-cyan-400">IS YOUR WEAPON</span>
+            </p>
+
+            <p class="description">
+              A tactical hybrid shooter where typing speed meets combat
+              strategy. Control Rika in intense battles across three deadly
+              phases. Precision typing equals lethal damage.
+            </p>
+
+            <div class="cta-buttons">
+              <button id="download-btn" class="primary-btn">
+                <i class="fas fa-download mr-2"></i> DOWNLOAD NOW
+              </button>
+
+              <button id="trailer-btn" class="secondary-btn">
+                <i class="fas fa-play mr-2"></i> WATCH TRAILER
+              </button>
+            </div>
+
+            <div class="stats-grid">
+              <div class="stat-box">
+                <div class="stat-value">&lt; 0.5s</div>
+                <div class="stat-label">Reaction Time</div>
+              </div>
+              <div class="stat-box">
+                <div class="stat-value">&gt; 95%</div>
+                <div class="stat-label">Accuracy</div>
+              </div>
+              <div class="stat-box">
+                <div class="stat-value">15+</div>
+                <div class="stat-label">Enemy Types</div>
+              </div>
+              <div class="stat-box">
+                <div class="stat-value">3</div>
+                <div class="stat-label">Tactical Phases</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="character-container">
+              <img
+                <img src="assets/images/hero/rika-hero.png" 
+                alt="Rika Character"
+                class="character-image"
+              />
+
+              <!-- HUD Overlay -->
+              <div class="hud-overlay">
+                <div class="hud-info">
+                  <div class="hud-item">
+                    <span class="hud-label">TARGET:</span>
+                    <span class="hud-value">ASSAULT_DRONE</span>
+                  </div>
+                  <div class="hud-item">
+                    <span class="hud-label">HEALTH:</span>
+                    <span class="hud-value health-value">64%</span>
+                  </div>
+                </div>
+                <div class="hud-commands">
+                  <div class="command-line text-green-400">
+                    > neutralize immediate threat
+                  </div>
+                  <div class="command-line text-white">
+                    > eliminate hostile units
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hybrid Combat -->
+    <section id="gameplay" class="section-dark">
+      <div class="container mx-auto px-4">
+        <h2 class="section-title">
+          <span class="text-cyan-400">HYBRID</span> COMBAT SYSTEM
+        </h2>
+        <p class="section-subtitle">
+          Experience the unique fusion of fast-paced typing and tactical shooter
+          gameplay
+        </p>
+
+        <div class="combat-grid">
+          <div class="combat-card">
+            <div class="card-icon">
+              <i class="fas fa-crosshairs"></i>
+            </div>
+            <h3 class="card-title">TACTICAL 2D COMBAT</h3>
+            <ul class="feature-list">
+              <li class="feature-item">
+                <i class="fas fa-check text-green-500 mr-3"></i>
+                Real-time enemy tracking and positioning
+              </li>
+              <li class="feature-item">
+                <i class="fas fa-check text-green-500 mr-3"></i>
+                Cover system and environmental tactics
+              </li>
+              <li class="feature-item">
+                <i class="fas fa-check text-green-500 mr-3"></i>
+                Dynamic enemy AI with flanking maneuvers
+              </li>
+              <li class="feature-item">
+                <i class="fas fa-check text-green-500 mr-3"></i>
+                Weapon selection based on typing style
+              </li>
+            </ul>
+          </div>
+
+          <div class="combat-card">
+            <div class="card-icon">
+              <i class="fas fa-keyboard"></i>
+            </div>
+            <h3 class="card-title">PRECISION TYPING</h3>
+            <ul class="feature-list">
+              <li class="feature-item">
+                <i class="fas fa-bullseye text-green-500 mr-3"></i>
+                Word-based targeting system
+              </li>
+              <li class="feature-item">
+                <i class="fas fa-chart-line text-green-500 mr-3"></i>
+                Combo and damage multiplier mechanics
+              </li>
+              <li class="feature-item">
+                <i class="fas fa-tachometer-alt text-green-500 mr-3"></i>
+                Accuracy-based damage calculation
+              </li>
+              <li class="feature-item">
+                <i class="fas fa-star text-green-500 mr-3"></i>
+                Critical hit phrases for boss encounters
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="mechanics-container">
+          <h3 class="mechanics-title">DEEP DIVE MECHANICS</h3>
+          <div class="mechanics-grid">
+            <div class="mechanic-card">
+              <div class="mechanic-icon">
+                <i class="fas fa-sort-amount-down"></i>
+              </div>
+              <h4 class="mechanic-title">Target Priority</h4>
+              <p class="mechanic-description">
+                Enemies have different threat levels. Snipers must be eliminated
+                before grunts.
+              </p>
+              <div class="mechanic-hint">HINT: Look for red outlines</div>
+            </div>
+
+            <div class="mechanic-card">
+              <div class="mechanic-icon">
+                <i class="fas fa-fire"></i>
+              </div>
+              <h4 class="mechanic-title">Combo System</h4>
+              <p class="mechanic-description">
+                Chain correct words to build multiplier. 10+ combo = double
+                damage.
+              </p>
+              <div class="mechanic-hint">Max combo: 25x multiplier</div>
+            </div>
+
+            <div class="mechanic-card">
+              <div class="mechanic-icon">
+                <i class="fas fa-robot"></i>
+              </div>
+              <h4 class="mechanic-title">Enemy Patterns</h4>
+              <p class="mechanic-description">
+                Each enemy type has unique typing patterns. Learn them to
+                anticipate attacks.
+              </p>
+              <div class="mechanic-hint">15+ unique patterns</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Battle Phases -->
+    <section id="phases" class="section-darker">
+      <div class="container mx-auto px-4">
+        <h2 class="section-title">
+          <span class="text-cyan-400">BATTLE</span> PROGRESSION
+        </h2>
+        <p class="section-subtitle">
+          Three intense phases, each with unique challenges and enemies
+        </p>
+
+        <div class="phase-tabs-container">
+          <button class="phase-tab active" data-phase="warehouse">
+            <div class="tab-header">
+              <span>PHASE 01: GUDANG</span>
+            </div>
+            <div class="tab-subtitle">
+              Close-quarters combat, limited visibility
+            </div>
+          </button>
+
+          <button class="phase-tab" data-phase="hallway">
+            <div class="tab-header">
+              <span>PHASE 02: HALLWAY</span>
+            </div>
+            <div class="tab-subtitle">
+              Narrow corridors, frontal engagements
+            </div>
+          </button>
+
+          <button class="phase-tab" data-phase="parking">
+            <div class="tab-header">
+              <span>PHASE 03: PARKING LOT</span>
+            </div>
+            <div class="tab-subtitle">Open area, boss fight</div>
+          </button>
+        </div>
+
+        <div class="phase-content">
+          <div class="phase-visual">
+            <img
+              id="phase-image"
+              src="assets/images/phases/warehouse.png"
+              alt="Phase Image"
+              class="phase-image"
+            />
+          </div>
+
+          <div class="phase-details">
+            <h3 id="phase-title" class="phase-title">GUDANG</h3>
+            <p id="phase-description" class="phase-description">
+              The starting area where Rika awakens. Limited visibility due to
+              poor lighting and stacked crates. Enemies use ambush tactics from
+              behind cover. Master the basics of cover-based typing combat here.
+            </p>
+
+            <div class="phase-stats">
+              <div class="phase-stat">
+                <div class="stat-label">ENEMY COUNT</div>
+                <div id="phase-enemies" class="stat-value">8-12</div>
+              </div>
+              <div class="phase-stat">
+                <div class="stat-label">SPECIAL FEATURE</div>
+                <div id="phase-feature" class="feature-value">
+                  Destructible Environment
+                </div>
+              </div>
+            </div>
+
+            <div class="tactical-advice">
+              <h4 class="advice-title">Tactical Advice:</h4>
+              <ul class="advice-list">
+                <li>Use crates for cover while typing</li>
+                <li>Prioritize snipers on upper walkways</li>
+                <li>Shoot explosive barrels for area damage</li>
+                <li>Watch for flanking enemies</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Video Trailer -->
+    <section id="trailer" class="section-dark">
+      <div class="container mx-auto px-4">
+        <h2 class="section-title">
+          <span class="text-cyan-400">GAMEPLAY</span> TRAILER
+        </h2>
+        <p class="section-subtitle">
+          Witness the intense fusion of typing and tactical combat
+        </p>
+
+        <div class="trailer-container">
+          <div class="video-wrapper">
+            <div id="video-placeholder" class="video-placeholder">
+              <img
+                <img src="assets/images/hero/trailer-thumbnail.png" 
+                alt="Trailer Thumbnail"
+                class="thumbnail"
+              />
+              <div class="play-button-overlay">
+                <button id="play-trailer" class="play-button">
+                  <i class="fas fa-play"></i>
+                </button>
+              </div>
+            </div>
+
+            <div id="video-player" class="video-player">
+              <video id="trailer-video" class="video-element" controls>
+                <source src="assets/videos/NCS.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+
+          <div class="video-info">
+            <div class="info-content">
+              <h3 class="video-title">
+                Type Escape - Official Gameplay Trailer
+              </h3>
+              <p class="video-meta">1:45 • Action-Packed Gameplay</p>
+            </div>
+            <button id="fullscreen-btn" class="fullscreen-btn">
+              <i class="fas fa-expand"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- System Requirements -->
+    <section class="section-darker">
+      <div class="container mx-auto px-4">
+        <h2 class="section-title">
+          <span class="text-cyan-400">SYSTEM</span> REQUIREMENTS
+        </h2>
+        <p class="section-subtitle">
+          Ensure your system is ready for the typing battle
+        </p>
+
+        <div class="requirements-tabs">
+          <button id="min-req-btn" class="req-tab active">MINIMUM</button>
+          <button id="rec-req-btn" class="req-tab">RECOMMENDED</button>
+        </div>
+
+        <div id="requirements-content" class="requirements-grid">
+          <div class="req-card">
+            <h3 class="req-category">OPERATING SYSTEM</h3>
+            <p class="req-value">Windows 10 64-bit</p>
+            <p class="req-note">Version 1909 or newer</p>
+          </div>
+
+          <div class="req-card">
+            <h3 class="req-category">PROCESSOR</h3>
+            <p class="req-value">Intel Core i5-4460</p>
+            <p class="req-note">or AMD FX-6300</p>
+          </div>
+
+          <div class="req-card">
+            <h3 class="req-category">MEMORY</h3>
+            <p class="req-value">8 GB RAM</p>
+            <p class="req-note">Dual-channel recommended</p>
+          </div>
+
+          <div class="req-card">
+            <h3 class="req-category">GRAPHICS</h3>
+            <p class="req-value">NVIDIA GeForce GTX 960</p>
+            <p class="req-note">or AMD Radeon R7 370</p>
+          </div>
+
+          <div class="req-card full-width">
+            <h3 class="req-category">STORAGE</h3>
+            <p class="req-value">5 GB available space</p>
+            <p class="req-note">SSD recommended for faster loading</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Screenshots -->
+    <section id="screenshots" class="section-dark">
+      <div class="container mx-auto px-4">
+        <h2 class="section-title">
+          <span class="text-cyan-400">SCREENSHOT</span> GALLERY
+        </h2>
+        <p class="section-subtitle">
+          Get a closer look at the intense action and visual style
+        </p>
+
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img
+              src="https://images.placeholder.com/400x225/252535/ffffff?text=Combat+Scene+1"
+              alt="Screenshot 1"
+              class="gallery-image"
+            />
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="https://images.placeholder.com/400x225/252535/ffffff?text=Typing+Interface"
+              alt="Screenshot 2"
+              class="gallery-image"
+            />
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="https://images.placeholder.com/400x225/252535/ffffff?text=Warehouse+Battle"
+              alt="Screenshot 3"
+              class="gallery-image"
+            />
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="https://images.placeholder.com/400x225/252535/ffffff?text=Hallway+Combat"
+              alt="Screenshot 4"
+              class="gallery-image"
+            />
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="https://images.placeholder.com/400x225/252535/ffffff?text=Boss+Fight"
+              alt="Screenshot 5"
+              class="gallery-image"
+            />
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="https://images.placeholder.com/400x225/252535/ffffff?text=UI+HUD"
+              alt="Screenshot 6"
+              class="gallery-image"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section id="download" class="cta-section">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="cta-title">
+          READY FOR <span class="text-cyan-400">BATTLE</span>?
+        </h2>
+
+        <p class="cta-description">
+          Download Typing Battle now and test your typing skills in the ultimate
+          tactical combat experience. Free to play, challenging to master.
+        </p>
+
+        <div class="download-container">
+          <h3 class="download-title">DOWNLOAD INFORMATION</h3>
+
+          <div class="download-info-grid">
+            <div class="info-item">
+              <div class="info-label">FILE SIZE</div>
+              <div class="info-value">10 GB</div>
+            </div>
+
+            <div class="info-item">
+              <div class="info-label">VERSION</div>
+              <div class="info-value">v1.0</div>
+            </div>
+
+            <div class="info-item">
+              <div class="info-label">FORMAT</div>
+              <div class="info-value">.EXE</div>
+            </div>
+          </div>
+
+          <button id="final-download-btn" class="download-button">
+            <i class="fas fa-download mr-3"></i> DOWNLOAD TYPING BATTLE
+          </button>
+
+          <p class="download-note">
+            System requirements: Windows 10/11, 8GB RAM, 5GB storage
+          </p>
+        </div>
+
+        <div class="social-links">
+          <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-steam"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container mx-auto px-4">
+        <div class="footer-content">
+          <div class="footer-brand">
+            <div class="brand-logo">
+              <div class="logo-icon"></div>
+              <span class="logo-text">
+                <span class="text-cyan-400">TYPE</span
+                ><span class="text-white">ESCAPE</span>
+              </span>
+            </div>
+            <p class="copyright">© 2025 Ucup Studio. All rights reserved.</p>
+          </div>
+
+          <div class="footer-info">
+            <p>A tactical typing shooter by Ucup Studio | Version 1.0 Alpha</p>
+            <p class="contact-info">
+              Contact: blablabla@email.com | Business: blablabla@email.com
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Download Modal -->
+    <div id="download-modal" class="modal">
+      <div class="modal-content">
+        <button id="close-modal" class="modal-close">
+          <i class="fas fa-times"></i>
+        </button>
+
+        <h3 class="modal-title">
+          <span class="text-cyan-400">DOWNLOAD</span> TYPING BATTLE
+        </h3>
+
+        <div class="modal-body">
+          <div class="file-info">
+            <h4 class="info-title">FILE INFORMATION</h4>
+            <div class="info-grid">
+              <div class="info-detail">
+                <div class="detail-label">File Name:</div>
+                <div class="detail-value">TypeEscape_Setup_v1.0.exe</div>
+              </div>
+              <div class="info-detail">
+                <div class="detail-label">File Size:</div>
+                <div class="detail-value">10 GB</div>
+              </div>
+              <div class="info-detail">
+                <div class="detail-label">Version:</div>
+                <div class="detail-value">v1.0 (Pre-Alpha)</div>
+              </div>
+              <div class="info-detail">
+                <div class="detail-label">Updated:</div>
+                <div class="detail-value">Coming Soon</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="verification-info">
+            <h4 class="info-title">VERIFICATION</h4>
+            <div class="checksum-section">
+              <div class="checksum-label">MD5 Checksum:</div>
+              <div class="checksum-value">[MD5_HASH_PLACEHOLDER]</div>
+            </div>
+            <div class="checksum-section">
+              <div class="checksum-label">SHA-256 Checksum:</div>
+              <div class="checksum-value">[SHA256_HASH_PLACEHOLDER]</div>
+            </div>
+          </div>
+
+          <div class="modal-action">
+            <p class="warning-note">
+              <i class="fas fa-exclamation-triangle text-yellow-500 mr-2"></i>
+              This is a pre-alpha version for testing purposes.
+            </p>
+
+            <button id="start-download" class="modal-download-btn">
+              <i class="fas fa-rocket mr-3"></i> START DOWNLOAD (1.8 GB)
+            </button>
+
+            <p class="download-time">
+              Estimated download time: 5-10 minutes (depending on connection)
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+  </body>
+</html>
