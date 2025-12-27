@@ -2,12 +2,24 @@
 // TYPING BATTLE - RESPONSIVE JAVASCRIPT
 // ============================================
 
-// Configuration
 // Detect base path for GitHub Pages
-const BASE_PATH = window.location.hostname.includes('github.io') 
-  ? window.location.pathname.split('/').slice(0, 2).join('/') + '/'
-  : '/';
+function getBasePath() {
+  const hostname = window.location.hostname;
+  const pathname = window.location.pathname;
+  
+  // If on GitHub Pages
+  if (hostname.includes('github.io')) {
+    const pathParts = pathname.split('/').filter(p => p);
+    return pathParts.length > 0 ? '/' + pathParts[0] + '/' : '/';
+  }
+  
+  // If on localhost or custom domain
+  return '/';
+}
 
+const BASE_PATH = getBasePath();
+
+// Configuration
 const CONFIG = {
   phaseData: {
     warehouse: {
@@ -16,7 +28,7 @@ const CONFIG = {
         "The starting area where Rika awakens. Limited visibility due to poor lighting and stacked crates. Enemies use ambush tactics from behind cover. Master the basics of cover-based typing combat here.",
       enemies: "8-12",
       feature: "Destructible Environment",
-      image: `${BASE_PATH}assets/images/phases/warehouse.png`,
+      image: BASE_PATH + "assets/images/phases/warehouse.png",
     },
     hallway: {
       title: "HALLWAY",
@@ -24,7 +36,7 @@ const CONFIG = {
         "Narrow corridors with no cover options. Enemies approach in waves from both directions. This phase tests pure typing speed and accuracy under pressure. No hiding, only skill.",
       enemies: "15-20",
       feature: "Endless Enemy Waves",
-      image: `${BASE_PATH}assets/images/phases/hallway.png`,
+      image: BASE_PATH + "assets/images/phases/hallway.png",
     },
     parking: {
       title: "PARKING LOT",
@@ -32,7 +44,7 @@ const CONFIG = {
         "Open area combat with enemies attacking from all directions. The final and most challenging phase features a boss fight with unique typing patterns. Environmental hazards add to the complexity.",
       enemies: "25+",
       feature: "Boss Fight & Hazards",
-      image: `${BASE_PATH}assets/images/phases/parking.png`,
+      image: BASE_PATH + "assets/images/phases/parking.png",
     },
   },
 
