@@ -2,7 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
     <title>Type Escape | Tactical Hybrid Shooter</title>
 
     <!-- Tailwind CSS -->
@@ -34,13 +37,18 @@
       <div class="container mx-auto px-4 py-4">
         <div class="flex justify-between items-center">
           <div class="flex items-center space-x-2">
-            <div class="logo-icon"></div>
+            <img
+              src="assets/images/icon/logo.png"
+              alt="Logo"
+              class="logo-icon"
+            />
             <span class="logo-text">
               <span class="text-cyan-400">TYPE</span
               ><span class="text-white">ESCAPE</span>
             </span>
           </div>
 
+          <!-- Desktop Navigation -->
           <div class="desktop-nav">
             <a href="#gameplay" class="nav-link">Gameplay</a>
             <a href="#phases" class="nav-link">Phases</a>
@@ -49,18 +57,63 @@
             <a href="#download" class="nav-link">Download</a>
           </div>
 
-          <button id="mobile-menu-btn" class="mobile-menu-btn">
+          <!-- Mobile Menu Button -->
+          <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Toggle menu">
             <i class="fas fa-bars"></i>
           </button>
         </div>
       </div>
     </nav>
 
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu-overlay" class="mobile-menu-overlay">
+      <div id="mobile-menu" class="mobile-menu">
+        <div class="mobile-menu-header">
+          <div class="flex items-center space-x-2">
+            <img
+              src="assets/images/icon/logo.png"
+              alt="Logo"
+              class="logo-icon"
+            />
+            <span class="logo-text">
+              <span class="text-cyan-400">TYPE</span
+              ><span class="text-white">ESCAPE</span>
+            </span>
+          </div>
+          <button id="mobile-menu-close" class="mobile-menu-close" aria-label="Close menu">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="mobile-menu-links">
+          <a href="#gameplay" class="mobile-nav-link">
+            <i class="fas fa-gamepad"></i>
+            <span>Gameplay</span>
+          </a>
+          <a href="#phases" class="mobile-nav-link">
+            <i class="fas fa-layer-group"></i>
+            <span>Phases</span>
+          </a>
+          <a href="#trailer" class="mobile-nav-link">
+            <i class="fas fa-play-circle"></i>
+            <span>Trailer</span>
+          </a>
+          <a href="#screenshots" class="mobile-nav-link">
+            <i class="fas fa-images"></i>
+            <span>Screenshots</span>
+          </a>
+          <a href="#download" class="mobile-nav-link">
+            <i class="fas fa-download"></i>
+            <span>Download</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
     <!-- Hero Section -->
     <section class="hero-section">
-      <div class="container mx-auto">
+      <div class="container mx-auto px-4">
         <div class="flex flex-col lg:flex-row items-center">
-          <div class="hero-content">
+          <div class="hero-content w-full lg:w-1/2">
             <h1 class="game-title">
               <span class="text-cyan-400">TYPE</span><br />
               <span class="text-white">ESCAPE</span>
@@ -106,10 +159,10 @@
             </div>
           </div>
 
-          <div class="hero-visual">
+          <div class="hero-visual w-full lg:w-1/2 mt-8 lg:mt-0">
             <div class="character-container">
               <img
-                <img src="assets/images/hero/rika-hero.png" 
+                src="assets/images/hero/rika-hero.png"
                 alt="Rika Character"
                 class="character-image"
               />
@@ -343,7 +396,7 @@
           <div class="video-wrapper">
             <div id="video-placeholder" class="video-placeholder">
               <img
-                <img src="assets/images/hero/trailer-thumbnail.png" 
+                src="assets/images/hero/trailer-thumbnail.png"
                 alt="Trailer Thumbnail"
                 class="thumbnail"
               />
@@ -355,7 +408,7 @@
             </div>
 
             <div id="video-player" class="video-player">
-              <video id="trailer-video" class="video-element" controls>
+              <video id="trailer-video" class="video-element" controls playsinline>
                 <source src="assets/videos/NCS.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
@@ -395,31 +448,31 @@
         <div id="requirements-content" class="requirements-grid">
           <div class="req-card">
             <h3 class="req-category">OPERATING SYSTEM</h3>
-            <p class="req-value">Windows 10 64-bit</p>
+            <p class="req-value" data-req="os">Windows 10 64-bit</p>
             <p class="req-note">Version 1909 or newer</p>
           </div>
 
           <div class="req-card">
             <h3 class="req-category">PROCESSOR</h3>
-            <p class="req-value">Intel Core i5-4460</p>
+            <p class="req-value" data-req="processor">Intel Core i5-4460</p>
             <p class="req-note">or AMD FX-6300</p>
           </div>
 
           <div class="req-card">
             <h3 class="req-category">MEMORY</h3>
-            <p class="req-value">8 GB RAM</p>
+            <p class="req-value" data-req="memory">8 GB RAM</p>
             <p class="req-note">Dual-channel recommended</p>
           </div>
 
           <div class="req-card">
             <h3 class="req-category">GRAPHICS</h3>
-            <p class="req-value">NVIDIA GeForce GTX 960</p>
+            <p class="req-value" data-req="graphics">NVIDIA GeForce GTX 960</p>
             <p class="req-note">or AMD Radeon R7 370</p>
           </div>
 
           <div class="req-card full-width">
             <h3 class="req-category">STORAGE</h3>
-            <p class="req-value">5 GB available space</p>
+            <p class="req-value" data-req="storage">5 GB available space</p>
             <p class="req-note">SSD recommended for faster loading</p>
           </div>
         </div>
@@ -436,54 +489,64 @@
           Get a closer look at the intense action and visual style
         </p>
 
-        <div class="gallery-grid">
-          <div class="gallery-item">
-            <img
-              src="https://images.placeholder.com/400x225/252535/ffffff?text=Combat+Scene+1"
-              alt="Screenshot 1"
-              class="gallery-image"
-            />
+        <div class="gallery-container">
+          <button class="gallery-nav gallery-nav-prev" id="gallery-prev" aria-label="Previous">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          
+          <div class="gallery-grid" id="gallery-grid">
+            <div class="gallery-item">
+              <img
+                src="assets/images/gameplay/ph1.1.png"
+                alt="Screenshot 1"
+                class="gallery-image"
+              />
+            </div>
+
+            <div class="gallery-item">
+              <img
+                src="assets/images/gameplay/ph1.2.png"
+                alt="Screenshot 2"
+                class="gallery-image"
+              />
+            </div>
+
+            <div class="gallery-item">
+              <img
+                src="assets/images/gameplay/ph2.1.png"
+                alt="Screenshot 3"
+                class="gallery-image"
+              />
+            </div>
+
+            <div class="gallery-item">
+              <img
+                src="assets/images/gameplay/ph2.2.png"
+                alt="Screenshot 4"
+                class="gallery-image"
+              />
+            </div>
+
+            <div class="gallery-item">
+              <img
+                src="assets/images/gameplay/ph3.1.png"
+                alt="Screenshot 5"
+                class="gallery-image"
+              />
+            </div>
+
+            <div class="gallery-item">
+              <img
+                src="assets/images/gameplay/ph3.2.png"
+                alt="Screenshot 6"
+                class="gallery-image"
+              />
+            </div>
           </div>
 
-          <div class="gallery-item">
-            <img
-              src="https://images.placeholder.com/400x225/252535/ffffff?text=Typing+Interface"
-              alt="Screenshot 2"
-              class="gallery-image"
-            />
-          </div>
-
-          <div class="gallery-item">
-            <img
-              src="https://images.placeholder.com/400x225/252535/ffffff?text=Warehouse+Battle"
-              alt="Screenshot 3"
-              class="gallery-image"
-            />
-          </div>
-
-          <div class="gallery-item">
-            <img
-              src="https://images.placeholder.com/400x225/252535/ffffff?text=Hallway+Combat"
-              alt="Screenshot 4"
-              class="gallery-image"
-            />
-          </div>
-
-          <div class="gallery-item">
-            <img
-              src="https://images.placeholder.com/400x225/252535/ffffff?text=Boss+Fight"
-              alt="Screenshot 5"
-              class="gallery-image"
-            />
-          </div>
-
-          <div class="gallery-item">
-            <img
-              src="https://images.placeholder.com/400x225/252535/ffffff?text=UI+HUD"
-              alt="Screenshot 6"
-              class="gallery-image"
-            />
-          </div>
+          <button class="gallery-nav gallery-nav-next" id="gallery-next" aria-label="Next">
+            <i class="fas fa-chevron-right"></i>
+          </button>
         </div>
       </div>
     </section>
@@ -544,7 +607,11 @@
         <div class="footer-content">
           <div class="footer-brand">
             <div class="brand-logo">
-              <div class="logo-icon"></div>
+              <img
+                src="assets/images/icon/logo.png"
+                alt="Logo"
+                class="logo-icon"
+              />
               <span class="logo-text">
                 <span class="text-cyan-400">TYPE</span
                 ><span class="text-white">ESCAPE</span>
@@ -566,7 +633,7 @@
     <!-- Download Modal -->
     <div id="download-modal" class="modal">
       <div class="modal-content">
-        <button id="close-modal" class="modal-close">
+        <button id="close-modal" class="modal-close" aria-label="Close modal">
           <i class="fas fa-times"></i>
         </button>
 
