@@ -219,7 +219,10 @@ class TypingBattleApp {
       phaseDescription.textContent = data.description;
       phaseEnemies.textContent = data.enemies;
       phaseFeature.textContent = data.feature;
-      phaseImage.src = data.image;
+      
+      // Add cache buster to force reload image
+      const cacheBuster = '?v=' + Date.now();
+      phaseImage.src = data.image + cacheBuster;
 
       // Fade in
       setTimeout(() => {
