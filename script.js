@@ -4,20 +4,25 @@
 
 // Detect base path for GitHub Pages
 function getBasePath() {
-  const hostname = window.location.hostname;
   const pathname = window.location.pathname;
   
-  // If on GitHub Pages
-  if (hostname.includes('github.io')) {
-    const pathParts = pathname.split('/').filter(p => p);
-    return pathParts.length > 0 ? '/' + pathParts[0] + '/' : '/';
+  // Check if running on GitHub Pages (path starts with repo name)
+  // URL: https://yayakeghaaa.github.io/type-escape/
+  // pathname: /type-escape/ or /type-escape/index.html
+  
+  if (pathname.includes('/type-escape/') || pathname.startsWith('/type-escape')) {
+    return '/type-escape/';
   }
   
-  // If on localhost or custom domain
+  // For custom domain or localhost
   return '/';
 }
 
 const BASE_PATH = getBasePath();
+
+// DEBUG: Log untuk cek path
+console.log('🔍 BASE_PATH:', BASE_PATH);
+console.log('🔍 Full URL test:', BASE_PATH + 'assets/images/phases/warehouse.png');
 
 // Configuration
 const CONFIG = {
