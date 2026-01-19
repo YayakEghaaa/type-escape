@@ -55,18 +55,18 @@ const CONFIG = {
 
   requirements: {
     minimum: {
-      os: "Windows 10 64-bit",
-      processor: "Intel Core i5-4460",
-      memory: "8 GB RAM",
-      graphics: "NVIDIA GeForce GTX 960",
-      storage: "5 GB available space",
+      os: "Windows 7 64-bit",
+      processor: "Intel Core i3-2100",
+      memory: "2 GB RAM",
+      graphics: "Intel HD Graphics 3000",
+      storage: "200 MB available space",
     },
     recommended: {
-      os: "Windows 11 64-bit",
-      processor: "Intel Core i7-7700K",
-      memory: "16 GB RAM",
-      graphics: "NVIDIA GeForce RTX 2060",
-      storage: "5 GB available space (SSD recommended)",
+      os: "Windows 10 64-bit",
+      processor: "Intel Core i5-4460",
+      memory: "4 GB RAM",
+      graphics: "NVIDIA GeForce GTX 650",
+      storage: "200 MB available space (SSD recommended)",
     },
   },
 };
@@ -150,7 +150,7 @@ class TypingBattleApp {
         this.closeDownloadModal();
       }
     });
-    this.startDownloadBtn?.addEventListener('click', () => this.simulateDownload());
+    this.startDownloadBtn?.addEventListener('click', () => this.startRealDownload());
 
     // Video Trailer
     this.playTrailerBtn?.addEventListener('click', () => this.handleVideoPlay());
@@ -244,7 +244,9 @@ class TypingBattleApp {
     document.body.style.overflow = '';
   }
 
-  simulateDownload() {
+  startRealDownload() {
+    const downloadUrl = 'https://github.com/YayakEghaaa/type-escape/releases/download/v1.0/TypeEscape-v1.0-Windows.zip.zip';
+    
     const btn = this.startDownloadBtn;
     const originalText = btn.innerHTML;
     const originalClass = btn.className;
@@ -253,43 +255,33 @@ class TypingBattleApp {
     btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-3"></i> PREPARING DOWNLOAD...';
     btn.disabled = true;
 
-    this.showNotification('Starting download simulation...', 'info');
+    this.showNotification('Starting download...', 'info');
 
     setTimeout(() => {
-      // Step 2: Downloading
-      btn.innerHTML = '<i class="fas fa-download mr-3"></i> DOWNLOADING... 0%';
+      // Start actual download
+      window.location.href = downloadUrl;
+      
+      // Step 2: Download started
+      btn.innerHTML = '<i class="fas fa-check mr-3"></i> DOWNLOAD STARTED!';
+      btn.style.background = 'linear-gradient(135deg, #00cc66, #00ff88)';
 
-      let progress = 0;
-      const progressInterval = setInterval(() => {
-        progress += 10;
-        btn.innerHTML = `<i class="fas fa-download mr-3"></i> DOWNLOADING... ${progress}%`;
+      this.showNotification(
+        'Download started! Check your browser downloads.',
+        'success'
+      );
 
-        if (progress >= 100) {
-          clearInterval(progressInterval);
+      // Close modal after delay
+      setTimeout(() => {
+        this.closeDownloadModal();
 
-          // Step 3: Completed
-          btn.innerHTML = '<i class="fas fa-check mr-3"></i> DOWNLOAD COMPLETE!';
-          btn.style.background = 'linear-gradient(135deg, #00cc66, #00ff88)';
-
-          this.showNotification(
-            'Download simulation complete! In production, the game file would now be on your computer.',
-            'success'
-          );
-
-          // Close modal after delay
-          setTimeout(() => {
-            this.closeDownloadModal();
-
-            // Reset button
-            setTimeout(() => {
-              btn.innerHTML = originalText;
-              btn.disabled = false;
-              btn.className = originalClass;
-              btn.style.background = '';
-            }, 500);
-          }, 2000);
-        }
-      }, 200);
+        // Reset button
+        setTimeout(() => {
+          btn.innerHTML = originalText;
+          btn.disabled = false;
+          btn.className = originalClass;
+          btn.style.background = '';
+        }, 500);
+      }, 2000);
     }, 1500);
   }
 
